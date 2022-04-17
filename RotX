@@ -32,12 +32,80 @@ dict2 = {0 : 'Z', 1 : 'A', 2 : 'B', 3 : 'C', 4 : 'D', 5 : 'E',
         16 : 'P', 17 : 'Q', 18 : 'R', 19 : 'S', 20 : 'T',
 
         21 : 'U', 22 : 'V', 23 : 'W', 24 : 'X', 25 : 'Y'}
+        
+        # Function to encrypt the string 
+# according to the shift provided
+
+def encrypt(message, shift):
+
+    cipher = ''
+
+    for letter in message:
+
+        # checking for space
+
+        if(letter != ' '):
+
+            # looks up the dictionary and 
+
+            # adds the shift to the index
+
+            num = ( dict1[letter] + shift ) % 26
+
+            # looks up the second dictionary for 
+
+            # the shifted alphabets and adds them
+
+            cipher += dict2[num]
+
+        else:
+
+            # adds space
+
+            cipher += ' '
+ 
+
+    return cipher
+ 
+# Function to decrypt the string 
+# according to the shift provided
+
+def decrypt(message, shift):
+
+    decipher = ''
+
+    for letter in message:
+
+        # checks for space
+
+        if(letter != ' '):
+
+            # looks up the dictionary and 
+
+            # subtracts the shift to the index
+
+            num = ( dict1[letter] - shift + 26) % 26
+
+            # looks up the second dictionary for the 
+
+            # shifted alphabets and adds them
+
+            decipher += dict2[num]
+
+        else:
+
+            # adds space
+
+            decipher += ' '
+ 
+
+    return decipher
+ 
+# driver function to run the program
 
 
 
-
-
-
+# Executes the main function
 
 
 
