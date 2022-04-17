@@ -172,3 +172,38 @@ def Decrypt_rot13():
 
       print ("Decrypted string:  " + result)
       print("\n")
+
+
+
+def main():
+    while True:
+    # use 'upper()' function to convert any lowercase characters to uppercase
+        print("\n")
+        print("########################")
+        print("[1] Encrypt Rot13 [1]")
+        print("[2] Decrypt Rot13 [2]")
+        print("[3] Encrypt Rot47 [3]")
+        print("[4] Decrypt Rot47 [4]")
+        print("[5] Exit [5]")
+        print("########################")
+        print("\n")
+        #print( "[+] Enter option [+] ")
+        option = input("[+] Enter: ")
+
+        if (option == '1'):
+            Encrypt_rot13()
+ 
+        elif (option == '2'):
+            Decrypt_rot13()
+          
+        elif (option == '3'):
+            Rot47_encryption()
+        elif (option =='4'):
+            Rot47_decryption()
+        elif option == '5':
+            break
+        else:
+            print("[!] Please choose one option [!]")
+
+if __name__ == "__main__":
+    main()
