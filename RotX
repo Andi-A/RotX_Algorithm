@@ -1,1 +1,72 @@
 
+
+
+
+
+
+
+
+
+
+
+#---------------------------- Rot 47 ---------------------------------------------------
+
+# Conversion table
+#!"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNO
+#PQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~
+
+def Rot47_encryption():
+    message = input("Enter message: ")
+    key = 47
+    encryp_text = ""
+
+    for i in range(len(message)):
+        temp = ord(message[i]) + key #Return the Unicode code point for a one-character string.
+        if temp > 126:
+            temp -= 94
+            encryp_text += chr(temp)
+        else:
+            encryp_text += chr(temp)
+        # if-else
+    # for
+
+    print("Encrypted Text: {}".format(encryp_text))
+
+def Rot47_decryption():
+    message = input("Enter message: ")
+    key = 47
+    decryp_text = ""
+
+    for i in range(len(message)):
+        temp = ord(message[i]) - key
+        if temp < 32:
+            temp += 94
+            decryp_text += chr(temp)
+        else:
+            decryp_text += chr(temp)
+     
+
+    print("Decrypted Text: {}".format(decryp_text))
+
+
+
+
+
+def Encrypt_rot13():
+      text_encrypt= input("Enter string to encrypt : ")
+      message = text_encrypt 
+      shift = 13
+
+      result = encrypt(message.upper(), shift)
+
+      print ("Encrypted: " + result)
+      print("\n")
+def Decrypt_rot13():
+      message = input(" Decrypt : ") 
+
+      shift = 13
+
+      result = decrypt(message.upper(), shift)
+
+      print ("Decrypted string:  " + result)
+      print("\n")
